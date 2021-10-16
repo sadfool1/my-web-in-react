@@ -1,5 +1,5 @@
 import "./App.css";
-import HelloWorld from "./components/UI/Interface";
+import HelloWorld from "./components/UI/Interface/Interface";
 
 function App() {
   return (
