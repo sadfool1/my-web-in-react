@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React, { useState } from "react";
+import styled from "styled-components";
 
 const MyButton = styled.button`
   background: transparent;
@@ -8,33 +8,30 @@ const MyButton = styled.button`
   color: palevioletred;
   margin: 0.5em 1em;
   padding: 0.25em 1em;
-
-  ${props =>
-    props.primary &&
-    css`
-      background: palevioletred;
-      color: white;
-    `}
 `;
 
 const Container = styled.div`
   text-align: center;
 `;
 
-const clickHandler = e => {
-  e.preventDefault();
-};
+const Button = props => {
+  const [isHovering, setHover] = useState(false);
+  const handleMouseEnter = e => {
+    setHover(true);
+    e.target.style.background = "pink";
+    e.target.style.color = "white";
+  };
 
-function changeBackground(e) {
-  e.target.style.background = "red";
-}
-const Button = () => {
+  const handleMouseLeave = e => {
+    setHover(false);
+    e.target.style.background = "white";
+    e.target.style.color = "palevioletred";
+  };
   return (
     <Container>
-      <MyButton onClick={clickHandler} onMouseOver={changeBackground}>
-        Normal Button
+      <MyButton onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        {props.text}
       </MyButton>
-      <MyButton primary>Primary Button</MyButton>
     </Container>
   );
 };
