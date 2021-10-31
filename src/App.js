@@ -1,4 +1,5 @@
-import HelloWorld from "./components/UI/Interface/Interface";
+import React from "react";
+import Navbar from "./components/UI/Navbar/Navbar";
 
 function App() {
   return (
