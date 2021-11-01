@@ -1,7 +1,35 @@
 import classes from "./NavElements.module.css";
+import React from "react";
 
-const NavElements = props => {
-  return <div className={classes.navButton}>{props.text}</div>;
-};
-
-export default NavElements;
+export const MenuItems = [
+  {
+    title: "Home",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "Services",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "Products",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "Contact Us",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "Blogs",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "Newsletter",
+    url: "#",
+    cName: "nav-links",
+  },
+];
